@@ -1,0 +1,60 @@
+/* src/App.css - TEMA DIM DARK */
+:root {
+  --bg-body: #09090b; /* Preto Fundo */
+  --bg-card: #18181b; /* Cinza Card */
+  --accent: #facc15; /* Amarelo Neon */
+  --success: #22c55e;
+  --danger: #ef4444;
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  --border: #27272a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
+body { background-color: var(--bg-body); color: var(--text-main); height: 100vh; overflow: hidden; }
+.app-container { display: flex; height: 100vh; }
+
+/* Sidebar */
+.sidebar { width: 220px; background-color: black; border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 20px; }
+.brand h1 { color: var(--accent); font-weight: 900; letter-spacing: -1px; font-size: 26px; }
+.menu-item { display: flex; gap: 10px; padding: 12px; color: var(--text-muted); cursor: pointer; border-radius: 6px; margin-top: 5px; transition: 0.2s; }
+.menu-item:hover, .menu-item.active { background: var(--accent); color: black; font-weight: bold; }
+
+/* Main Content */
+.main-content { flex: 1; padding: 30px; overflow-y: auto; }
+.control-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; }
+.title-page h2 { font-size: 32px; font-weight: bold; }
+
+/* Inputs e Cards */
+.input-section { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px; }
+.input-card { background: var(--bg-card); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+.big-input { background: transparent; border: none; color: white; font-size: 32px; font-weight: bold; width: 80px; border-bottom: 2px solid var(--border); }
+
+/* Funil */
+.funnel-container { background: var(--bg-card); padding: 30px; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 30px; }
+.funnel-steps { display: flex; justify-content: space-between; position: relative; margin-top: 20px; }
+.funnel-steps::before { content: ''; position: absolute; top: 25px; left: 0; width: 100%; height: 2px; background: #3f3f46; z-index: 0; }
+.step { position: relative; z-index: 1; text-align: center; flex: 1; }
+.step-circle { width: 50px; height: 50px; background: #27272a; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; border: 2px solid #3f3f46; font-weight: bold; color: var(--text-muted); }
+.step.active .step-circle { background: var(--accent); color: black; border-color: var(--accent); }
+
+/* Tabelas e Badges */
+.dim-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.dim-table th { text-align: left; color: var(--text-muted); padding: 15px; border-bottom: 1px solid var(--border); font-size: 12px; text-transform: uppercase; }
+.dim-table td { padding: 15px; border-bottom: 1px solid #222; color: white; font-size: 14px; }
+.badge { padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+.badge.trial { background: rgba(250, 204, 21, 0.1); color: var(--accent); border: 1px solid rgba(250, 204, 21, 0.3); }
+.badge.active { background: rgba(34, 197, 94, 0.1); color: var(--success); border: 1px solid rgba(34, 197, 94, 0.3); }
+.badge.churned { background: rgba(239, 68, 68, 0.1); color: var(--danger); }
+.btn-action { background: var(--accent); border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 12px; margin-right: 5px; }
+.btn-danger { background: transparent; color: var(--danger); border: 1px solid var(--border); }
+
+/* Widgets */
+.goals-widget { background: #111; padding: 15px; border-radius: 8px; margin-top: auto; border: 1px solid #333; }
+.progress-bar { width: 100%; height: 4px; background: #333; border-radius: 2px; overflow: hidden; margin-top: 2px; }
+.progress-fill { height: 100%; background: var(--accent); }
+
+/* Animação */
+.animate-fade { animation: fadeIn 0.4s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
